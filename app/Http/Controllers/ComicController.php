@@ -13,7 +13,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $data_c = Comic::all():
+        $data_c = Comic::all();
 
         return view('comics.index', compact('data_c'));
     }
