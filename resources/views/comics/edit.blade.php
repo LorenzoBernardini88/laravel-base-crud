@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="mt-5">Modifica Comic</h1>
-<form action="{{route('comics.update','$comic->id')}}" method="POST" class="mt-3">
+<form action="{{route('comics.update',$comic->id)}}" method="POST" class="mt-3">
     @csrf
     @method('PUT')
     <div class="form-row">

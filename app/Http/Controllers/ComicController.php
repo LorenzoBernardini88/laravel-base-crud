@@ -93,10 +93,10 @@ class ComicController extends Controller
         $comic->price = $data["price"];
         $comic->series = $data["series"];
         $comic->sale_date = $data["sale_date"];
-        if(!empty($data["thumb"])){
-            $product->image = $data["thumb"];
-        }
-        $product->save();
+        // if(!empty($data["thumb"])){
+        //     $product->image = $data["thumb"];
+        // }
+        $comic->save();
 
         return redirect()->route('comics.show', $comic->id);
     }
