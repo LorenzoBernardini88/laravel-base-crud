@@ -29,12 +29,7 @@
                 <td>{{$elemento->type}}</th>
                 <td>
                 <a href="{{route("comics.show", $elemento->id)}}"><button type="button" class="btn btn-primary">Vedi</button></a>
-                <a href="{{route("comics.edit", $elemento->id)}}"><button type="button" class="btn btn-warning">Modifica</button></a>
-                <form action="{{route("comics.destroy", $elemento->id)}}" method="POST">
-                    @csrf
-                    @method("DELETE")
-                    <button type="submit" class="btn btn-danger">Elimina</button>
-                </form>
+                
             </th>
             </tr>
             @endforeach
