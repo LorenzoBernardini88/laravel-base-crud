@@ -8,12 +8,13 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">name</th>
-            <th scope="col">type</th>
-            <th scope="col">image</th>
-            <th scope="col">cooking_time</th>
-            <th scope="col">weight</th>
-            <th scope="col">link</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Thumb</th>
+            <th scope="col">Price</th>
+            <th scope="col">Series</th>
+            <th scope="col">Sale-Date</th>
+            <th scope="col">Type</th>
         </tr>
         </thead>
         <tbody>
@@ -29,6 +30,7 @@
                 <td>{{$elemento->type}}</th>
                 <td>
                 <a href="{{route("comics.show", $elemento->id)}}"><button type="button" class="btn btn-primary">Vedi</button></a>
+                <a href="{{route("comics.edit", $elemento->id)}}"><button type="button" class="btn btn-warning">Modifica</button></a>
                 
             </th>
             </tr>

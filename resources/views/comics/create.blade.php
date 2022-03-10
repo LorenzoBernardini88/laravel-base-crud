@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('content')
-<h1 class="mt-5">Create New Comic</h1>
+<h1 class="mt-5">Crea Nuovo Comic</h1>
 <form action="{{route('comics.store')}}" method="POST" class="mt-3">
     @csrf
     <div class="form-row">
