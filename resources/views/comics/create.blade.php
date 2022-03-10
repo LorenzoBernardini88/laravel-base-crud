@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="mt-5">Create New Comic</h1>
-<form action="{{route('comics.store')}}" methods="POST" class="mt-3">
+<form action="{{route('comics.store')}}" method="POST" class="mt-3">
     @csrf
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -32,7 +32,7 @@
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label for="date_sale">Date-Sale</label>
-                <input type="text" class="form-control" name="date_sale" id="date_sale">
+                <input type="date" class="form-control" name="sale_date" id="date_sale">
             </div>
         <div class="form-group col-md-2">
             <label for="price">Price</label>
