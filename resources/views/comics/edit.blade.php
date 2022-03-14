@@ -19,7 +19,7 @@
             <label for="type">Type</label>
             <select value="{{$comic->type}}" id="type" name="type" class="form-control">
                 <option value='graphic novel'{{old('type')=='graphic novel'? 'selected' : null}}>graphic novel</option>
-                <option value='comic book'{{old('type')=='comic' ? 'selected' : null}}>comic book</option>
+                <option value='comic book'{{old('type')=='comic book' ? 'selected' : null}}>comic book</option>
             </select>
         </div> 
         </div>
