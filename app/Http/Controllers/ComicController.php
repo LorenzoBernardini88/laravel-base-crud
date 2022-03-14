@@ -110,7 +110,7 @@ class ComicController extends Controller
             "type" => [
                 "required",
                 Rule::in(['graphic novel','comic book'])
-                ,],
+                ],
             "thumb" => "nullable|url"
         ]);
         // $data = $request->all();
