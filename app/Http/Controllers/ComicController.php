@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Comic;
 use Illuminate\Http\Request;
-
+use Illuminate\Validation\Rule;
 class ComicController extends Controller
 {
     /**
@@ -37,20 +37,33 @@ class ComicController extends Controller
     public function store(Request $request)
     {
     
+        $request->validate([
+            "title" => "required|string|max:50|unique:comics",
+            "description" => "required|string",
+            //completare validation price.
+            "price" => "required|numeric",
+            "series" => "required|string|max:100",
+            "sale_date" => "required",
+            "type" => [
+                "required",
+                Rule::in(['graphic novel','comic book'])
+                ,],
+            "thumb" => "nullable|url"
+        ]);
+        // $newcomic = new Comic();
+        // $newcomic->title = $data_comics["title"];
+        // $newcomic->description = $data_comics["description"];
+        // $newcomic->price = $data_comics["price"];
+        // $newcomic->series = $data_comics["series"];
+        // $newcomic->sale_date = $data_comics["sale_date"];
+        // $newcomic->type = $data_comics["type"];
+        // if(!empty($data_comics["thumb"])){
+        //     $newProduct->image = $data_comics["thumb"];
+        // }
+        // $newcomic->save();
         $data_comics = $request->all();
+        $newcomic = Comic::create($data_comics);
 
-        $newcomic = new Comic();
-        $newcomic->title = $data_comics["title"];
-        $newcomic->description = $data_comics["description"];
-        $newcomic->price = $data_comics["price"];
-        $newcomic->series = $data_comics["series"];
-        $newcomic->sale_date = $data_comics["sale_date"];
-        $newcomic->type = $data_comics["type"];
-        if(!empty($data_comics["thumb"])){
-            $newProduct->image = $data_comics["thumb"];
-        }
-        $newcomic->save();
-    
         return redirect()->route('comics.show', $newcomic->id);
 
     }

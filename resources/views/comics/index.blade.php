@@ -35,7 +35,7 @@
                     @csrf
                     @method('DELETE')
                     <input type="submit" value="Cancella"> 
-                    {{-- onclick="return confirm('Conferma cancellazione dato ?') --}}
+                    {{-- onclick="return confirm('Conferma cancellazione dato ?')" --}}
                 </form>
             </th>
             </tr>
@@ -43,4 +43,4 @@
         
         </tbody>
     </table>
-@endsection
+@endsection 
