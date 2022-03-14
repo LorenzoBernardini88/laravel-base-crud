@@ -101,9 +101,9 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         $request->validate([
-            "title" => "required|string|max:50|unique:comics",
+            "title" => "required|string|max:50|unique:comics,{$comic->id}",
             "description" => "required|string",
-            //completare validation price.
+            //completare validation price ?.
             "price" => "required|numeric",
             "series" => "required|string|max:100",
             "sale_date" => "required",
